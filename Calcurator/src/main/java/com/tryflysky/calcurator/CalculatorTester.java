@@ -19,6 +19,7 @@ public class CalculatorTester {
 		Calculator calculator = new Calculator();
 		
 		String[] samples = {
+				"1+2*3",
 				"((1+2))*((4/2)+(6-5))",
 				"２×三足す6－10"
 		};

@@ -18,6 +18,7 @@ public class AllOperatorCalcuratorTest {
 		final int ANSWER = 1;
 
 		String[][] formats = {
+				{"1+2*3", "7"},
 				{"3*3", "9"},
 				{"2*2+4/2-1", "5"},
 				{"2*2*3/4", "3"},

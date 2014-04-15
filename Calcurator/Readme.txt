@@ -6,7 +6,12 @@
 
 ■使用方法
 
+  CalculatorTesterがデモ用クラスとなってます。
+
   Calculatorに文字列の式を渡す
+  検証はせずエラーは何等かのExceptionを返す
+  呼び出し側でcatchして処理する前提
+
   計算可能な表記については、以下を参照
     - com.tryflysky.expression.model
        Number
