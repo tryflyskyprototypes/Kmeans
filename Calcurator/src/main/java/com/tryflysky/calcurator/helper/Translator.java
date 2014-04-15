@@ -2,12 +2,14 @@ package com.tryflysky.calcurator.helper;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
-import com.tryflysky.expression.ExpressionDeque;
+import org.apache.commons.lang3.StringUtils;
+
+import com.tryflysky.expression.Number;
 import com.tryflysky.expression.Operator;
 import com.tryflysky.expression.Parentheses;
 import com.tryflysky.expression.Simbole;
-import com.tryflysky.utils.DequeUtils;
 
 public class Translator {
 
@@ -16,7 +18,7 @@ public class Translator {
 
 
 	private Translator() {
-		//singleton
+		//util clall
 	};
 
 
@@ -26,11 +28,17 @@ public class Translator {
 
 
 
-	public static Simbole translate(String operator) {
+	public static String execute(String expression) {
 
-		return dictionaly.get(operator.toUpperCase());
+		String translated = expression;
+
+		for(Entry<String, Simbole> e : dictionaly.entrySet()) {
+
+			translated = StringUtils.replace(translated, e.getKey(), e.getValue().getSimbole());
+		}
+
+		return translated;
 	}
-
 
 
 
@@ -38,6 +46,7 @@ public class Translator {
 
 		writeIn(Operator.values());
 		writeIn(Parentheses.values());
+		writeIn(Number.values());
 	}
 
 
@@ -55,22 +64,4 @@ public class Translator {
 			}
 		}
 	}
-
-
-
-
-	public static ExpressionDeque toTranslatedDeque(ExpressionDeque original) {
-
-		ExpressionDeque translated = new  ExpressionDeque();
-
-		DequeUtils.copyLastAll(translated.getOperands(), original.getOperands());
-
-		for(String operator : original.getOperators()) {
-
-			translated.addLastOperator(translate(operator).getSimbole());
-		}
-
-		return translated;
-	}
-
 }

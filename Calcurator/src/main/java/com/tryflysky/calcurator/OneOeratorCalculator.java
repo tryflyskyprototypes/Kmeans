@@ -2,7 +2,7 @@ package com.tryflysky.calcurator;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.tryflysky.calcurator.helper.Translator;
+import com.tryflysky.expression.Expression;
 import com.tryflysky.expression.ExpressionDeque;
 import com.tryflysky.expression.Operator;
 import com.tryflysky.utils.DequeUtils;
@@ -33,13 +33,18 @@ public class OneOeratorCalculator {
 
 
 
-	public ExpressionDeque execute(ExpressionDeque expressionDeque) {
+	public ExpressionDeque execute(Expression expression) {
 
-		ExpressionDeque translated = Translator.toTranslatedDeque(expressionDeque);
+		return execute(expression.getDeque());
+	}
+
+
+
+	public ExpressionDeque execute(ExpressionDeque expressionDeque) {
 
 		if(containsMyTarget(expressionDeque)) {
 
-			return execute(calculateFirstHit(translated));
+			return execute(calculateFirstHit(expressionDeque));
 		}else {
 
 			return expressionDeque;

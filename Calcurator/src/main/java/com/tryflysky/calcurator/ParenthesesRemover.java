@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import org.apache.commons.lang3.StringUtils;
 
 import com.tryflysky.expression.Expression;
+import com.tryflysky.expression.ExpressionFactory;
 import com.tryflysky.expression.Parentheses;
 
 
@@ -27,16 +28,28 @@ public class ParenthesesRemover {
 
 	public Expression execute(String expression) {
 
-		return execute(new Expression(expression));
+		return execute(ExpressionFactory.generate(expression));
 	}
 
 
 
+
+	/**
+	 * 式に含まれる全ての括弧内を計算して括弧のない式を返す
+	 * 検証は省略
+	 *
+	 * @param expression
+	 * @return
+	 */
 	public Expression execute(Expression expression) {
 
-		Deque<StringBuilder> partExpressions = new LinkedList<StringBuilder>();
+		if(expression.notContainsParentheses()) {	//ガード節
+			return expression;
+		}
 
-		StringBuilder currentPart = new StringBuilder();
+		Deque<StringBuilder> partExpressions = new LinkedList<StringBuilder>();	//括弧で分割した式
+
+		StringBuilder currentPart = new StringBuilder();	//括弧内の式
 
 		for(int i = 0; i < expression.toString().length(); i++) {
 
@@ -62,41 +75,35 @@ public class ParenthesesRemover {
 			}
 		}
 
-		return new Expression(currentPart.toString());
+		return ExpressionFactory.generate(currentPart.toString());
 	}
+
+
+
 
 
 
 
 	private boolean leftParentheses(String c) {
 
-		return isMatch(c, Parentheses.LEFT);
+		return match(c, Parentheses.LEFT);
 	}
+
 
 
 
 
 	private boolean rightParentheses(String c) {
 
-		return isMatch(c, Parentheses.RIGHT);
+		return match(c, Parentheses.RIGHT);
 	}
 
 
 
-	private boolean isMatch(String c, Parentheses p) {
+
+
+	private boolean match(String c, Parentheses p) {
 
 		return StringUtils.equals(c, p.getSimbole());
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 }

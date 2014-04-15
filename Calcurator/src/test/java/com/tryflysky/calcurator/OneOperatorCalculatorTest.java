@@ -23,12 +23,12 @@ public class OneOperatorCalculatorTest {
 
 			String[][] formats = {
 					{"7+1+3", "11", "PLUS"},
-//					{"2+10" , "12", "PLUS"},
-//					{"7-5"  , "2" , "MINUS"},
-//					{"2*2"  , "4" , "MULTIPLE"},
-//					{"2*2*3", "12", "MULTIPLE"},
-//					{"4/2"  , "2" , "DIVIDE"},
-//					{"8/4/2", "1" , "DIVIDE"},
+					{"2+10" , "12", "PLUS"},
+					{"7-5"  , "2" , "MINUS"},
+					{"2*2"  , "4" , "MULTIPLE"},
+					{"2*2*3", "12", "MULTIPLE"},
+					{"4/2"  , "2" , "DIVIDE"},
+					{"8/4/2", "1" , "DIVIDE"},
 			};
 
 

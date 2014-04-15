@@ -32,7 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="src/main/resources/commons-collections4-4.0-javadoc.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/commons-collections4-4.0-sources.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/commons-collections4-4.0-test-sources.jar"/>
@@ -40,5 +39,6 @@
 	<classpathentry kind="lib" path="src/main/resources/commons-collections4-4.0.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/commons-lang3-3.3.1-javadoc.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/commons-lang3-3.3.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

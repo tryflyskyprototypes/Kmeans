@@ -12,7 +12,7 @@ public class Expression {
 	private final String expression;
 
 
-	public Expression(String expression) {
+	Expression(String expression) {
 
 		this.expression = StringUtils.deleteWhitespace(expression);
 	}
@@ -34,9 +34,21 @@ public class Expression {
 
 
 
+
+	/**
+	 * 式に括弧があれば真
+	 *
+	 * @return
+	 */
 	public boolean containsParentheses() {
 
 		return StringUtils.contains(expression, Parentheses.LEFT.getSimbole());
+	}
+
+
+	public boolean notContainsParentheses() {
+
+		return ! containsParentheses();
 	}
 
 

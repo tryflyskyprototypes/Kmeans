@@ -4,8 +4,8 @@ package com.tryflysky.expression;
 
 public enum Parentheses implements Simbole{
 
-	LEFT("(" , new String[]{"（", "[", "{", "「"}),
-	RIGHT(")", new String[]{"）", "]", "}", "」"}),
+	LEFT("(" , new String[]{"（", "[", "{", "「", "左括弧"}),
+	RIGHT(")", new String[]{"）", "]", "}", "」", "右括弧"}),
 	;
 
 	private final String simbole;

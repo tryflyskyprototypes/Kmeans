@@ -1,9 +1,8 @@
 package com.tryflysky.calcurator;
 
-import com.tryflysky.calcurator.helper.ExpressionDequeGenerator;
-import com.tryflysky.calcurator.helper.ExpressionDequeViewer;
-import com.tryflysky.calcurator.helper.Translator;
+import com.tryflysky.expression.Expression;
 import com.tryflysky.expression.ExpressionDeque;
+import com.tryflysky.expression.ExpressionFactory;
 import com.tryflysky.expression.Operator;
 
 
@@ -17,8 +16,6 @@ import com.tryflysky.expression.Operator;
  */
 public class AllOperatorCalculator {
 
-	ExpressionDequeGenerator dequeGenerator = new ExpressionDequeGenerator();
-
 	//計算の優先順
 	Operator[] calculateOrder = {
 			Operator.MULTIPLE,
@@ -29,19 +26,18 @@ public class AllOperatorCalculator {
 
 
 
-	ExpressionDequeViewer viewer = new ExpressionDequeViewer();
-
 
 	public  String execute(String expression) {
 
-		return execute(dequeGenerator.execute(expression));
+		return execute(ExpressionFactory.generate(expression));
 	}
 
 
 
-	public String execute(ExpressionDeque expressionDeque) {
 
-		ExpressionDeque result = Translator.toTranslatedDeque(expressionDeque);
+	public String execute(Expression expression) {
+
+		ExpressionDeque result = expression.getDeque();
 
 		for(Operator target : calculateOrder) {
 

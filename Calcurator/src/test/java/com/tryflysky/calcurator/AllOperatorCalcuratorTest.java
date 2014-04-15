@@ -4,9 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.tryflysky.calcurator.helper.ExpressionDequeGenerator;
-import com.tryflysky.expression.ExpressionDeque;
-
 
 public class AllOperatorCalcuratorTest {
 
@@ -21,23 +18,20 @@ public class AllOperatorCalcuratorTest {
 		final int ANSWER = 1;
 
 		String[][] formats = {
+				{"3*3", "9"},
 				{"2*2+4/2-1", "5"},
 				{"2*2*3/4", "3"},
 				{"8/2*2", "2"},
 				{"3-1+4/2", "0"},
+				{"壱足す二", "3"},
+				{"一〇÷２ひく3", "2"},
 		};
 
 
 		for(String[] format : formats) {
 
-			ExpressionDeque deque = new ExpressionDequeGenerator().execute(format[EXPRESSION]);
-
-			assertEquals(format[ANSWER], calcurator.execute(deque));
+			assertEquals(format[ANSWER], calcurator.execute(format[EXPRESSION]));
 		}
-
-
-
-
 	}
 
 
