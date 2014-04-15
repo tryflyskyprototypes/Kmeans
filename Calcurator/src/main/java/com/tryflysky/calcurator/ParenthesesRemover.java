@@ -11,7 +11,7 @@ import com.tryflysky.expression.model.Parentheses;
 
 
 /**
- * 式に含まれる括弧を外す（括弧内のみ計算）した式を返す
+ * 括弧内のみ計算して、括弧の無い式を返す
  *
  * @author admin
  *
