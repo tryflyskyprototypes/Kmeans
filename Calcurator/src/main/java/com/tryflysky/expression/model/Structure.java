@@ -1,4 +1,4 @@
-package com.tryflysky.expression;
+package com.tryflysky.expression.model;
 
 import com.tryflysky.utils.DequeMapKey;
 

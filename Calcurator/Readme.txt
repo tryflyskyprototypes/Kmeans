@@ -1,9 +1,27 @@
 
-//対応予定
+■機能
 
-    p = 括弧 (parentheses)
-    e = 指数 (exponents)
-    m = 乗法 (multiplication)
-    d = 除法 (division)
-    a = 加算 (addition)
-    s = 減算 (subtraction)
+  電卓
+
+
+■使用方法
+
+  Calculatorに文字列の式を渡す
+  計算可能な表記については、AllOperatorCalculatorTestを参照
+
+
+■仕様
+
+  int型で計算した結果を返す
+  全角、半角どちらにも対応
+  「÷、×」などの記号にも対応
+  「一、弐」なども計算可能（十、拾は不可。一〇は可）
+
+■FAQ
+
+  - 指数や8,16進数への対応は？
+     ->予定はありません
+
+  - なぜReadmeが.txtなの？
+    ->GitHubを使い始める前に作成したものをそのまま利用しているからです
+

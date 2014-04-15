@@ -6,9 +6,9 @@ import java.util.Deque;
 
 import org.junit.Test;
 
-import com.tryflysky.calcurator.helper.ExpressionDequeGenerator;
-import com.tryflysky.expression.ExpressionDeque;
-import com.tryflysky.expression.Operator;
+import com.tryflysky.expression.helper.ExpressionDequeGenerator;
+import com.tryflysky.expression.model.ExpressionDeque;
+import com.tryflysky.expression.model.Operator;
 
 
 public class OneOperatorCalculatorTest {

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 import org.apache.commons.collections4.CollectionUtils;
 
-import com.tryflysky.expression.Structure;
+import com.tryflysky.expression.model.Structure;
 
 
 public class DequeMap<E> {

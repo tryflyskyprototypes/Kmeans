@@ -1,4 +1,4 @@
-package com.tryflysky.calcurator.helper;
+package com.tryflysky.expression.helper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,10 +6,10 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.tryflysky.expression.Number;
-import com.tryflysky.expression.Operator;
-import com.tryflysky.expression.Parentheses;
-import com.tryflysky.expression.Simbole;
+import com.tryflysky.expression.model.Number;
+import com.tryflysky.expression.model.Operator;
+import com.tryflysky.expression.model.Parentheses;
+import com.tryflysky.expression.model.Simbole;
 
 public class Translator {
 

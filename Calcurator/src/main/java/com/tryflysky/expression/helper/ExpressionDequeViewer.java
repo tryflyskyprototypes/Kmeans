@@ -1,8 +1,8 @@
-package com.tryflysky.calcurator.helper;
+package com.tryflysky.expression.helper;
 
 import java.util.Deque;
 
-import com.tryflysky.expression.ExpressionDeque;
+import com.tryflysky.expression.model.ExpressionDeque;
 
 
 /**

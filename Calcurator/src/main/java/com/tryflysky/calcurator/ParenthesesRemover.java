@@ -5,9 +5,8 @@ import java.util.LinkedList;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.tryflysky.expression.Expression;
-import com.tryflysky.expression.ExpressionFactory;
-import com.tryflysky.expression.Parentheses;
+import com.tryflysky.expression.model.Expression;
+import com.tryflysky.expression.model.Parentheses;
 
 
 
@@ -28,7 +27,7 @@ public class ParenthesesRemover {
 
 	public Expression execute(String expression) {
 
-		return execute(ExpressionFactory.generate(expression));
+		return execute(new Expression(expression));
 	}
 
 
@@ -75,7 +74,7 @@ public class ParenthesesRemover {
 			}
 		}
 
-		return ExpressionFactory.generate(currentPart.toString());
+		return new Expression(currentPart.toString());
 	}
 
 

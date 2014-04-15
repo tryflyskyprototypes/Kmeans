@@ -1,8 +1,9 @@
-package com.tryflysky.expression;
+package com.tryflysky.expression.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.tryflysky.calcurator.helper.ExpressionDequeGenerator;
+import com.tryflysky.expression.helper.ExpressionDequeGenerator;
+import com.tryflysky.expression.helper.Translator;
 
 public class Expression {
 
@@ -12,9 +13,11 @@ public class Expression {
 	private final String expression;
 
 
-	Expression(String expression) {
+	public Expression(String expression) {
 
-		this.expression = StringUtils.deleteWhitespace(expression);
+		String translated = Translator.execute(StringUtils.deleteWhitespace(expression));
+
+		this.expression = translated;
 	}
 
 

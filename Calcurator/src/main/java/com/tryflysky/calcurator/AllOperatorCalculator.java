@@ -1,9 +1,8 @@
 package com.tryflysky.calcurator;
 
-import com.tryflysky.expression.Expression;
-import com.tryflysky.expression.ExpressionDeque;
-import com.tryflysky.expression.ExpressionFactory;
-import com.tryflysky.expression.Operator;
+import com.tryflysky.expression.model.Expression;
+import com.tryflysky.expression.model.ExpressionDeque;
+import com.tryflysky.expression.model.Operator;
 
 
 
@@ -29,7 +28,7 @@ public class AllOperatorCalculator {
 
 	public  String execute(String expression) {
 
-		return execute(ExpressionFactory.generate(expression));
+		return execute(new Expression(expression));
 	}
 
 

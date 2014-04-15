@@ -2,9 +2,9 @@ package com.tryflysky.calcurator;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.tryflysky.expression.Expression;
-import com.tryflysky.expression.ExpressionDeque;
-import com.tryflysky.expression.Operator;
+import com.tryflysky.expression.model.Expression;
+import com.tryflysky.expression.model.ExpressionDeque;
+import com.tryflysky.expression.model.Operator;
 import com.tryflysky.utils.DequeUtils;
 import com.tryflysky.utils.MyCollectionUtils;
 

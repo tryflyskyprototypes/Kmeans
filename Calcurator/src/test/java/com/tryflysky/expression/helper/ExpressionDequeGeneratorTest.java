@@ -1,12 +1,12 @@
-package com.tryflysky.calcurator.helper;
+package com.tryflysky.expression.helper;
 import static org.junit.Assert.*;
 
 import java.util.Deque;
 
 import org.junit.Test;
 
-import com.tryflysky.calcurator.helper.ExpressionDequeGenerator;
-import com.tryflysky.expression.ExpressionDeque;
+import com.tryflysky.expression.helper.ExpressionDequeGenerator;
+import com.tryflysky.expression.model.ExpressionDeque;
 
 
 public class ExpressionDequeGeneratorTest {

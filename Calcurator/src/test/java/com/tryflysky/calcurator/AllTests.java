@@ -4,8 +4,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import com.tryflysky.calcurator.helper.ExpressionDequeGeneratorTest;
-import com.tryflysky.calcurator.helper.TranslatorTest;
+import com.tryflysky.expression.helper.ExpressionDequeGeneratorTest;
+import com.tryflysky.expression.helper.TranslatorTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({

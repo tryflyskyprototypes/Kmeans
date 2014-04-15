@@ -1,13 +1,12 @@
-package com.tryflysky.calcurator.helper;
+package com.tryflysky.expression.helper;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.tryflysky.expression.Expression;
-import com.tryflysky.expression.ExpressionDeque;
-import com.tryflysky.expression.ExpressionFactory;
-import com.tryflysky.expression.Operator;
+import com.tryflysky.expression.model.Expression;
+import com.tryflysky.expression.model.ExpressionDeque;
+import com.tryflysky.expression.model.Operator;
 
 public class TranslatorTest {
 
@@ -19,7 +18,7 @@ public class TranslatorTest {
 
 		String expStr = "1÷2×3引く4たす5";
 
-		Expression expression = ExpressionFactory.generate(expStr);
+		Expression expression = new Expression(expStr);
 
 		ExpressionDeque deque = expression.getDeque();
 

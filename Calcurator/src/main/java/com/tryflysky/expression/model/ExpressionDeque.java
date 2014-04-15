@@ -1,6 +1,6 @@
-package com.tryflysky.expression;
+package com.tryflysky.expression.model;
 
-import static com.tryflysky.expression.Structure.*;
+import static com.tryflysky.expression.model.Structure.*;
 
 import java.util.Deque;
 

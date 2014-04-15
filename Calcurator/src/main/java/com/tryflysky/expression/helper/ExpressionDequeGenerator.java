@@ -1,7 +1,7 @@
-package com.tryflysky.calcurator.helper;
+package com.tryflysky.expression.helper;
 import org.apache.commons.lang3.StringUtils;
 
-import com.tryflysky.expression.ExpressionDeque;
+import com.tryflysky.expression.model.ExpressionDeque;
 
 
 public class ExpressionDequeGenerator {

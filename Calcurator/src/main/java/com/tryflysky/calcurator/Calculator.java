@@ -1,7 +1,6 @@
 package com.tryflysky.calcurator;
 
-import com.tryflysky.expression.Expression;
-import com.tryflysky.expression.ExpressionFactory;
+import com.tryflysky.expression.model.Expression;
 
 
 /**
@@ -10,6 +9,7 @@ import com.tryflysky.expression.ExpressionFactory;
  *
  * 漢数字も計算できる
  * 漢数字の場合は漢数字で返すようなこ洒落た機能は無い
+ * ※やるのであれば、このクラスを改修するのではなくラッパーを用意して下さい
  *
  * @author syowha
  *
@@ -29,11 +29,9 @@ public class Calculator {
 	 */
 	public int execute(String expression) {
 
-		Expression exp = ExpressionFactory.generate(expression);
+		Expression removed_parentheses  = new ParenthesesRemover().execute(expression);
 
-		exp = new ParenthesesRemover().execute(exp);
-
-		String answer = new AllOperatorCalculator().execute(exp);
+		String answer = new AllOperatorCalculator().execute(removed_parentheses);
 
 		return Integer.parseInt(answer);
 	}
