@@ -18,7 +18,13 @@ public class AllOperatorCalcuratorTest {
 		final int ANSWER = 1;
 
 		String[][] formats = {
+				//課題の式
 				{"1+2*3", "7"},
+				{"一足す二×参", "7"},
+				{"one + two * three", "7"},
+				{"One plus TWO multipled by three", "7"},
+
+				//その他
 				{"3*3", "9"},
 				{"2*2+4/2-1", "5"},
 				{"2*2*3/4", "3"},
@@ -26,6 +32,8 @@ public class AllOperatorCalcuratorTest {
 				{"3-1+4/2", "0"},
 				{"壱足す二", "3"},
 				{"一〇÷２ひく3", "2"},
+				{"Four * two / EIGHT", "1"},
+				{"nine times three", "27"},
 		};
 
 
@@ -34,8 +42,6 @@ public class AllOperatorCalcuratorTest {
 			assertEquals(format[ANSWER], calcurator.execute(format[EXPRESSION]));
 		}
 	}
-
-
 
 
 

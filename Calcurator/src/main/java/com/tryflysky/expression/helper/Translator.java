@@ -18,7 +18,7 @@ public class Translator {
 
 
 	private Translator() {
-		//util clall
+		//util class
 	};
 
 
@@ -30,15 +30,19 @@ public class Translator {
 
 	public static String execute(String expression) {
 
-		String translated = expression;
+		String translated = fix(expression);
 
 		for(Entry<String, Simbole> e : dictionaly.entrySet()) {
 
 			translated = StringUtils.replace(translated, e.getKey(), e.getValue().getSimbole());
 		}
 
-		return translated;
+		return StringUtils.deleteWhitespace(translated);
 	}
+
+
+
+
 
 
 
@@ -60,8 +64,18 @@ public class Translator {
 
 			for(String candidate : simbole.getCandidates()) {
 
-				dictionaly.put(candidate.toUpperCase(), simbole);
+				dictionaly.put(fix(candidate), simbole);
 			}
 		}
+	}
+
+
+
+
+	private static String fix(String str) {
+
+		String fixed = str.toLowerCase();
+
+		return StringUtils.remove(fixed, "by");		//TODO 定数化？
 	}
 }

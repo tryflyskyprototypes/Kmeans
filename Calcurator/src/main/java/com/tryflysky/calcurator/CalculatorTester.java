@@ -19,7 +19,13 @@ public class CalculatorTester {
 		Calculator calculator = new Calculator();
 		
 		String[] samples = {
+				//課題の式
 				"1+2*3",
+				"一足す二×参",
+				"one + two * three",
+				"One plus TWO multipled by three",
+				
+				//思いつき
 				"((1+2))*((4/2)+(6-5))",
 				"２×三足す6－10"
 		};

@@ -15,7 +15,7 @@ public class Expression {
 
 	public Expression(String expression) {
 
-		String translated = Translator.execute(StringUtils.deleteWhitespace(expression));
+		String translated = Translator.execute(expression);
 
 		this.expression = translated;
 	}
