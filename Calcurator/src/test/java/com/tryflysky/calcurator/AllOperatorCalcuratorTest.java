@@ -34,6 +34,10 @@ public class AllOperatorCalcuratorTest {
 				{"一〇÷２ひく3", "2"},
 				{"Four * two / EIGHT", "1"},
 				{"nine times three", "27"},
+				
+				{"1", "1"},
+				{"弐", "2"},
+				{"three", "3"},
 		};
 
 

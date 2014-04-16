@@ -37,7 +37,7 @@ public class AllOperatorCalculator {
 
 	public String execute(Expression expression) {
 
-		ExpressionDeque result = expression.getDeque();
+		ExpressionDeque result = expression.toDeque();
 
 		for(Operator target : calculateOrder) {
 

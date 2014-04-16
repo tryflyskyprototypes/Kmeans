@@ -23,9 +23,13 @@ public class ParenthesesRemover {
 
 
 
-	public Expression execute(String expression) {
+	/*public Expression execute(String expression) {
 
 		return execute(new Expression(expression));
+	}*/
+	public Expression execute(String expression) {
+
+		return new Expression(toNoParenthesesExpression(ExpressionUtils.toCharacterDeque(expression)));
 	}
 
 
@@ -37,7 +41,7 @@ public class ParenthesesRemover {
 	 * @param expression
 	 * @return
 	 */
-	public Expression execute(Expression expression) {
+	/*public Expression execute(Expression expression) {
 
 		if(expression.notContainsParentheses()) {	//ガード節
 			return expression;
@@ -72,7 +76,33 @@ public class ParenthesesRemover {
 		}
 
 		return new Expression(currentPart.toString());
+	}*/
+	private String toNoParenthesesExpression(Deque<String> charDeque) {
+
+		StringBuilder noParentheses = new StringBuilder();
+
+		while( ! charDeque.isEmpty()) {
+
+			String c = charDeque.removeFirst();
+
+			if(leftParentheses(c)) {
+
+				c = toNoParenthesesExpression(charDeque);	//左括弧[(]が見つかったら
+			}
+
+			if(rightParentheses(c)) {
+
+				return calcurator.execute(noParentheses.toString());
+			}
+
+			noParentheses.append(c);
+		}
+
+		return noParentheses.toString();
 	}
+
+
+
 
 
 

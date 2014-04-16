@@ -40,7 +40,7 @@ public class OneOeratorCalculator {
 
 	public ExpressionDeque execute(Expression expression) {
 
-		return execute(expression.getDeque());
+		return execute(expression.toDeque());
 	}
 
 

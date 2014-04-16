@@ -20,7 +20,7 @@ public class TranslatorTest {
 
 		Expression expression = new Expression(expStr);
 
-		ExpressionDeque deque = expression.getDeque();
+		ExpressionDeque deque = expression.toDeque();
 
 		String[] expected_operators = {
 				Operator.DIVIDE.getSimbole(),

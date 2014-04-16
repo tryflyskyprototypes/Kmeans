@@ -36,7 +36,7 @@ public class Expression {
 
 
 
-	public ExpressionDeque getDeque() {
+	public ExpressionDeque toDeque() {
 
 		return expressionDequeGenerator.execute(expression);	//状態変化するので、毎回生成して返す
 	}
