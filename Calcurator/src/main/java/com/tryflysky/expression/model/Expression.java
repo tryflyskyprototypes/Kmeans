@@ -5,19 +5,25 @@ import org.apache.commons.lang3.StringUtils;
 import com.tryflysky.expression.helper.ExpressionDequeGenerator;
 import com.tryflysky.expression.helper.Translator;
 
+
+
+/**
+ * 式を表す
+ * 例：1+2*3
+ *
+ * @author admin
+ *
+ */
 public class Expression {
 
-	private ExpressionDequeGenerator expressionDequeGenerator = new ExpressionDequeGenerator();
-
+	private final ExpressionDequeGenerator expressionDequeGenerator = new ExpressionDequeGenerator();
 
 	private final String expression;
 
 
 	public Expression(String expression) {
 
-		String translated = Translator.execute(expression);
-
-		this.expression = translated;
+		this.expression = Translator.execute(expression);
 	}
 
 
@@ -49,11 +55,9 @@ public class Expression {
 	}
 
 
+
 	public boolean notContainsParentheses() {
 
 		return ! containsParentheses();
 	}
-
-
-
 }

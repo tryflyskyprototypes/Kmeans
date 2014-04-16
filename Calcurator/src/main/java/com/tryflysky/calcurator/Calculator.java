@@ -1,7 +1,5 @@
 package com.tryflysky.calcurator;
 
-import com.tryflysky.expression.model.Expression;
-
 
 /**
  * 計算機
@@ -29,9 +27,8 @@ public class Calculator {
 	 */
 	public int execute(String expression) {
 
-		Expression removed_parentheses  = new ParenthesesRemover().execute(expression);
-
-		String answer = new AllOperatorCalculator().execute(removed_parentheses);
+		//TODO 戻り値もオブジェクトがいいかも？
+		String answer = new AllOperatorCalculator().execute(new ParenthesesRemover().execute(expression));
 
 		return Integer.parseInt(answer);
 	}

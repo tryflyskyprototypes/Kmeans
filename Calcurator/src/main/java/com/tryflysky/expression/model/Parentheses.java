@@ -4,7 +4,7 @@ package com.tryflysky.expression.model;
 
 public enum Parentheses implements Simbole{
 
-	LEFT("(" , new String[]{"（", "[", "{", "「", "左括弧"}),
+	LEFT ("(", new String[]{"（", "[", "{", "「", "左括弧"}),	//現状、括弧の種類は区別しない
 	RIGHT(")", new String[]{"）", "]", "}", "」", "右括弧"}),
 	;
 

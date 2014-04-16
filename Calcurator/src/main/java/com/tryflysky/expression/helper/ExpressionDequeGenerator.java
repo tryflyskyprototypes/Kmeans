@@ -1,10 +1,10 @@
 package com.tryflysky.expression.helper;
-import org.apache.commons.lang3.StringUtils;
-
 import com.tryflysky.expression.model.ExpressionDeque;
 
 
 public class ExpressionDequeGenerator {
+
+
 
 
 
@@ -18,7 +18,7 @@ public class ExpressionDequeGenerator {
 
 			String c = String.valueOf(expression.charAt(i));
 
-			if(isOperand(c)) {
+			if(ExpressionUtils.isOperand(c)) {
 
 				operand.append(c);
 			}else {
@@ -30,20 +30,9 @@ public class ExpressionDequeGenerator {
 			}
 		}
 
-		//最後の1つ対策
+		//最後の1文字対策
 		result.addLastOperand(operand.toString());
 
 		return result;
 	}
-
-
-
-
-
-
-	private boolean isOperand(String c) {
-
-		return StringUtils.isNumeric(c);
-	}
-
 }

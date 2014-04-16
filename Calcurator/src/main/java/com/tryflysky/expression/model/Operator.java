@@ -61,4 +61,13 @@ public enum Operator implements Simbole{
 	}
 
 	abstract public int calculate(int value1, int value2);
+
+
+	public int calculate(ExpressionDeque deque) {
+
+		int v1 = Integer.parseInt(deque.removeFirstOperand());
+		int v2 = Integer.parseInt(deque.removeFirstOperand());
+
+		return calculate(v1, v2);
+	}
 }

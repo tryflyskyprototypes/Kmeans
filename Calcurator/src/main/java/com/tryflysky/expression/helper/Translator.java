@@ -13,7 +13,7 @@ import com.tryflysky.expression.model.Simbole;
 
 public class Translator {
 
-	private static Map<String, Simbole> dictionaly = new HashMap<String, Simbole>();
+	private static final Map<String, Simbole> dictionaly = new HashMap<String, Simbole>();
 
 
 
@@ -22,9 +22,14 @@ public class Translator {
 	};
 
 
+
 	static {
-		init();
+		writeIn(Operator.values());
+		writeIn(Parentheses.values());
+		writeIn(Number.values());
 	}
+
+
 
 
 
@@ -44,18 +49,6 @@ public class Translator {
 
 
 
-
-
-	private static void init() {
-
-		writeIn(Operator.values());
-		writeIn(Parentheses.values());
-		writeIn(Number.values());
-	}
-
-
-
-
 	private static void writeIn(Simbole[] simboles) {
 
 		for(Simbole simbole : simboles) {
@@ -68,6 +61,7 @@ public class Translator {
 			}
 		}
 	}
+
 
 
 

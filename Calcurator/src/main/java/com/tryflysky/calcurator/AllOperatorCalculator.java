@@ -34,6 +34,7 @@ public class AllOperatorCalculator {
 
 
 
+
 	public String execute(Expression expression) {
 
 		ExpressionDeque result = expression.getDeque();

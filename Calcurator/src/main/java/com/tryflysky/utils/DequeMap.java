@@ -75,5 +75,8 @@ public class DequeMap<E> {
 
 
 
+	public boolean contains(DequeMapKey key, E value) {
 
+		return MyCollectionUtils.contains(dequeMap.get(key), value);
+	}
 }

@@ -16,7 +16,7 @@ public class MyCollectionUtils {
 
 	public static boolean contains(Collection<? extends Object> collection, Object search) {
 
-		//TODO なんか美しくない
+		//TODO CollectionUtilsあたりに何かいいメソッドあるかも
 		for(Object o : collection) {
 
 			if(o.equals(search)) {

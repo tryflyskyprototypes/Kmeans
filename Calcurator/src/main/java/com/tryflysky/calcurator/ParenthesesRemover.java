@@ -3,8 +3,7 @@ package com.tryflysky.calcurator;
 import java.util.Deque;
 import java.util.LinkedList;
 
-import org.apache.commons.lang3.StringUtils;
-
+import com.tryflysky.expression.helper.ExpressionUtils;
 import com.tryflysky.expression.model.Expression;
 import com.tryflysky.expression.model.Parentheses;
 
@@ -18,9 +17,8 @@ import com.tryflysky.expression.model.Parentheses;
  */
 public class ParenthesesRemover {
 
-
-
 	private AllOperatorCalculator calcurator = new AllOperatorCalculator();
+
 
 
 
@@ -29,7 +27,6 @@ public class ParenthesesRemover {
 
 		return execute(new Expression(expression));
 	}
-
 
 
 
@@ -81,11 +78,9 @@ public class ParenthesesRemover {
 
 
 
-
-
 	private boolean leftParentheses(String c) {
 
-		return match(c, Parentheses.LEFT);
+		return ExpressionUtils.match(c, Parentheses.LEFT);
 	}
 
 
@@ -94,15 +89,6 @@ public class ParenthesesRemover {
 
 	private boolean rightParentheses(String c) {
 
-		return match(c, Parentheses.RIGHT);
-	}
-
-
-
-
-
-	private boolean match(String c, Parentheses p) {
-
-		return StringUtils.equals(c, p.getSimbole());
+		return ExpressionUtils.match(c, Parentheses.RIGHT);
 	}
 }

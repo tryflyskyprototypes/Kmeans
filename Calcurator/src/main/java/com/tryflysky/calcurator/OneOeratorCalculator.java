@@ -1,12 +1,9 @@
 package com.tryflysky.calcurator;
 
-import org.apache.commons.lang3.StringUtils;
-
+import com.tryflysky.expression.helper.ExpressionUtils;
 import com.tryflysky.expression.model.Expression;
 import com.tryflysky.expression.model.ExpressionDeque;
 import com.tryflysky.expression.model.Operator;
-import com.tryflysky.utils.DequeUtils;
-import com.tryflysky.utils.MyCollectionUtils;
 
 
 
@@ -22,14 +19,22 @@ import com.tryflysky.utils.MyCollectionUtils;
  */
 public class OneOeratorCalculator {
 
-	private final Operator targetOperator;	// +-/*いずれかの演算子
+	private final Operator target;	// +-/*いずれかの演算子
 
 
-	public OneOeratorCalculator(Operator targetOperator) {
+	public OneOeratorCalculator(Operator target) {
 
-		this.targetOperator = targetOperator;
+		this.target = target;
 	}
 
+
+
+
+
+	public ExpressionDeque execute(String expression) {
+
+		return execute(new Expression(expression));
+	}
 
 
 
@@ -40,16 +45,16 @@ public class OneOeratorCalculator {
 
 
 
-	public ExpressionDeque execute(ExpressionDeque expressionDeque) {
+	public ExpressionDeque execute(ExpressionDeque deque) {
 
-		if(containsMyTarget(expressionDeque)) {
+		if(deque.containsOperator(target)) {
 
-			return execute(calculateFirstHit(expressionDeque));
-		}else {
-
-			return expressionDeque;
+			return execute(calculateFirstHit(deque));
 		}
+
+		return deque;
 	}
+
 
 
 
@@ -58,66 +63,39 @@ public class OneOeratorCalculator {
 	 * 担当の演算子かつ最初に見つかったもののみ計算して返す
 	 * execute()の方で再帰してるので最終的には全て計算される
 	 *
-	 * @param expressionDeque
+	 * @param deque
 	 * @return
 	 */
-	private ExpressionDeque calculateFirstHit(ExpressionDeque expressionDeque) {
+	private ExpressionDeque calculateFirstHit(ExpressionDeque deque) {
 
-		ExpressionDeque result = new ExpressionDeque();
+		ExpressionDeque calculated = new ExpressionDeque();
 
-		while(expressionDeque.hasOperator()) {
+		while(deque.hasOperator()) {
 
-			String operator = expressionDeque.removeFirstOperator();
+			String operator = deque.removeFirstOperator();
 
 			if(myTarget(operator)) {
 
-				result.addLastOperand(calculate(expressionDeque));
+				calculated.addLastOperand(String.valueOf(target.calculate(deque)));
 
-				transferAll(result, expressionDeque);
+				ExpressionUtils.transferLastAll(calculated, deque);
 
 			}else {
 
-				result.addLastOperator(operator);
-				result.addLastOperand(expressionDeque.removeFirstOperand());
+				calculated.addLastOperator(operator);
+				calculated.addLastOperand(deque.removeFirstOperand());
 			}
 		}
 
-		return result;
+		return calculated;
 	}
 
-
-
-
-	private String calculate(ExpressionDeque expressionDeque) {
-
-		int v1 = Integer.parseInt(expressionDeque.removeFirstOperand());
-		int v2 = Integer.parseInt(expressionDeque.removeFirstOperand());
-
-		return String.valueOf(targetOperator.calculate(v1, v2));
-	}
-
-
-
-
-	private void transferAll(ExpressionDeque to, ExpressionDeque from) {
-
-		DequeUtils.transferLastAll(to.getOperands(), from.getOperands());
-		DequeUtils.transferLastAll(to.getOperators(), from.getOperators());
-	}
-
-
-
-
-	private boolean containsMyTarget(ExpressionDeque expressionDeque) {
-
-		return MyCollectionUtils.contains(expressionDeque.getOperators(), targetOperator.getSimbole());
-	}
 
 
 
 
 	private boolean myTarget(String candidate) {
 
-		return StringUtils.equals(candidate, targetOperator.getSimbole());
+		return ExpressionUtils.match(candidate, target);
 	}
 }

@@ -10,42 +10,39 @@ import com.tryflysky.utils.DequeMap;
 
 
 
+/**
+ * 式を被演算子と演算子にわけてそれぞれのDequeとして保持
+ *
+ * @author admin
+ *
+ */
 public class ExpressionDeque {
 
-	private DequeMap<String> dequeMap;
+	private DequeMap<String> deques;
 
 
 
 	public ExpressionDeque() {
 
-		dequeMap = new DequeMap<String>();
+		deques = new DequeMap<String>();
 
-		dequeMap.addDeque(OPERAND);
-		dequeMap.addDeque(OPERATOR);
+		deques.addDeque(OPERAND);
+		deques.addDeque(OPERATOR);
 	}
 
 
-	public void addFirstOperand(String value) {
-
-		dequeMap.addFirst(OPERAND, value);
-	}
 
 
 	public void addLastOperand(String value) {
 
 		addIfNotBlank(OPERAND, value);
-
-//		dequeMap.addLast(OPERAND, value);
 	}
-
-
-
 
 
 
 	public String removeFirstOperand() {
 
-		return dequeMap.removeFirst(OPERAND);
+		return deques.removeFirst(OPERAND);
 	}
 
 
@@ -53,61 +50,58 @@ public class ExpressionDeque {
 	public void addLastOperator(String value) {
 
 		addIfNotBlank(OPERATOR, value);
-
-//		dequeMap.addLast(OPERATOR, value);
 	}
 
 
 
 	public String removeFirstOperator() {
 
-		return dequeMap.removeFirst(OPERATOR);
-	}
-
-
-
-	public String getFirstOperator() {
-
-		return dequeMap.getFirst(OPERATOR);
+		return deques.removeFirst(OPERATOR);
 	}
 
 
 
 	public Deque<String> getOperands() {
 
-		return dequeMap.getDeque(OPERAND);
+		return deques.getDeque(OPERAND);
 	}
 
 
 
 	public Deque<String> getOperators() {
 
-		return dequeMap.getDeque(OPERATOR);
+		return deques.getDeque(OPERATOR);
 	}
 
 
 
 	public boolean hasOperand() {
 
-		return dequeMap.isNotEmpty(OPERAND);
+		return deques.isNotEmpty(OPERAND);
 	}
 
 
 
 	public boolean hasOperator() {
 
-		return dequeMap.isNotEmpty(OPERATOR);
+		return deques.isNotEmpty(OPERATOR);
 	}
+
 
 
 	private void addIfNotBlank(Structure key, String value) {
 
 		if(StringUtils.isNotBlank(value)) {
 
-			dequeMap.addLast(key, value);
+			deques.addLast(key, value);
 		}
 	}
 
 
 
+
+	public boolean containsOperator(Operator operator) {
+
+		return deques.contains(OPERATOR, operator.getSimbole());
+	}
 }
