@@ -47,12 +47,7 @@ public class OneOeratorCalculator {
 
 	public ExpressionDeque execute(ExpressionDeque deque) {
 
-		if(deque.containsOperator(target)) {
-
-			return execute(calculateFirstHit(deque));
-		}
-
-		return deque;
+		return calculate(deque);
 	}
 
 
@@ -60,8 +55,28 @@ public class OneOeratorCalculator {
 
 
 	/**
-	 * 担当の演算子かつ最初に見つかったもののみ計算して返す
-	 * execute()の方で再帰してるので最終的には全て計算される
+	 * 担当の演算子のみ計算した式を返す（今はDeque返してますが）
+	 * 最初に見つかった担当の演算子のみ計算するメソッドを再帰しながら呼ぶことで最終的には全て計算される
+	 *
+	 * @param deque
+	 * @return
+	 */
+	private ExpressionDeque calculate(ExpressionDeque deque) {
+
+		if(deque.notContainsOperator(target)) {
+
+			return deque;
+		}
+
+		return calculate(calculateFirstHit(deque));
+	}
+
+
+
+
+
+	/**
+	 * 最初に見つかった担当の演算子のみ計算して返す
 	 *
 	 * @param deque
 	 * @return
@@ -79,12 +94,11 @@ public class OneOeratorCalculator {
 				calculated.addLastOperand(String.valueOf(target.calculate(deque)));
 
 				ExpressionUtils.transferLastAll(calculated, deque);
-
-			}else {
-
-				calculated.addLastOperator(operator);
-				calculated.addLastOperand(deque.removeFirstOperand());
+				break;
 			}
+
+			calculated.addLastOperator(operator);
+			calculated.addLastOperand(deque.removeFirstOperand());
 		}
 
 		return calculated;

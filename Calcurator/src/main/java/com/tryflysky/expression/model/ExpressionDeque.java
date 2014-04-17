@@ -104,4 +104,10 @@ public class ExpressionDeque {
 
 		return deques.contains(OPERATOR, operator.getSimbole());
 	}
+	
+	
+	public boolean notContainsOperator(Operator operator) {
+		
+		return ! containsOperator(operator);
+	}
 }
