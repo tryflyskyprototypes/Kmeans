@@ -1,4 +1,4 @@
-package com.tryflysky.kmeans.utils;
+package com.tryflysky.kmeans.clustering;
 
 import java.util.LinkedList;
 import java.util.List;

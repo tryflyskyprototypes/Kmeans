@@ -3,7 +3,7 @@ package com.tryflysky.kmeans.bean.input;
 import org.apache.commons.lang3.StringUtils;
 
 import com.tryflysky.kmeans.config.DataConfig;
-import com.tryflysky.kmeans.validation.ValidateStatus;
+import com.tryflysky.kmeans.config.ValidateStatus;
 import com.tryflysky.utils.MyStringUtils;
 
 

@@ -2,7 +2,7 @@ package com.tryflysky.kmeans.bean.input;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.tryflysky.kmeans.validation.ValidateStatus;
+import com.tryflysky.kmeans.config.ValidateStatus;
 
 
 public class Sheet extends Validatable {

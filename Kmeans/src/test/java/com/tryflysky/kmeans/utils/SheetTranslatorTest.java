@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.tryflysky.kmeans.bean.input.Row;
 import com.tryflysky.kmeans.bean.output.Block;
 import com.tryflysky.kmeans.bean.output.Coordinate;
-import com.tryflysky.kmeans.utils.SheetTranslator;
+import com.tryflysky.kmeans.clustering.SheetTranslator;
 
 public class SheetTranslatorTest {
 

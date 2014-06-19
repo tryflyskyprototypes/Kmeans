@@ -1,6 +1,6 @@
 package com.tryflysky.kmeans.bean.input;
 
-import com.tryflysky.kmeans.validation.ValidateStatus;
+import com.tryflysky.kmeans.config.ValidateStatus;
 
 public class DivideNumber extends Validatable {
 

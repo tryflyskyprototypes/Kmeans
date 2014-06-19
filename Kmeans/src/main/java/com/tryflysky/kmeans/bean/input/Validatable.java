@@ -1,6 +1,6 @@
 package com.tryflysky.kmeans.bean.input;
 
-import com.tryflysky.kmeans.validation.ValidateStatus;
+import com.tryflysky.kmeans.config.ValidateStatus;
 
 abstract public class Validatable {
 

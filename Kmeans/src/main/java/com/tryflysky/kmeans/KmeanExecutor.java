@@ -5,10 +5,10 @@ import java.util.List;
 
 import com.tryflysky.kmeans.bean.input.Sheet;
 import com.tryflysky.kmeans.bean.output.Block;
+import com.tryflysky.kmeans.clustering.BlockDivider;
+import com.tryflysky.kmeans.clustering.BlockSorter;
+import com.tryflysky.kmeans.clustering.SheetTranslator;
 import com.tryflysky.kmeans.reader.DataReader;
-import com.tryflysky.kmeans.utils.BlockDivider;
-import com.tryflysky.kmeans.utils.BlockSorter;
-import com.tryflysky.kmeans.utils.SheetTranslator;
 import com.tryflysky.kmeans.viewer.ResultViewer;
 
 public class KmeanExecutor {

@@ -1,4 +1,4 @@
-package com.tryflysky.kmeans.utils;
+package com.tryflysky.kmeans.clustering;
 
 import java.util.Arrays;
 import java.util.Comparator;

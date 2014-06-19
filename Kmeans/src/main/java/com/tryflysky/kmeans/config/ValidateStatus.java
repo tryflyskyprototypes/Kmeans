@@ -1,4 +1,4 @@
-package com.tryflysky.kmeans.validation;
+package com.tryflysky.kmeans.config;
 
 public enum ValidateStatus {
 //	UNKOWN,
