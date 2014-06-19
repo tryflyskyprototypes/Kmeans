@@ -32,13 +32,15 @@ public class KmeanExecutor {
 
 		Sheet inputed = dataReader.read();
 
-		//TODO validate
+		//TODO validate input
 
 		//translate
 		Block translated = new SheetTranslator().toBlock(inputed);
 
 		//divide
 		List<Block> blocks = new BlockDivider().execute(translated, inputed.getDivideNumber());
+
+		//TODO validate divide
 
 		//sort
 		List<Block> blocks_sorted = new BlockSorter().execute(blocks);

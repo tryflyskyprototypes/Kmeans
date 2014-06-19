@@ -7,12 +7,15 @@ import com.tryflysky.kmeans.bean.input.Sheet;
 
 public class MockTextReader implements DataReader {
 
+	private final String divideNum;
 
+
+	public MockTextReader(int divideNum) {
+
+		this.divideNum = String.valueOf(divideNum);
+	}
 
 	public Sheet read() throws IOException {
-
-		final String divideNum = "2";
-
 
 		String[] lines = {
 				"0 0 0 0 0 0 0 0 0 0 0",

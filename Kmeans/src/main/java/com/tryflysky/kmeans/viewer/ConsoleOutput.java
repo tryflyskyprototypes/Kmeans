@@ -15,7 +15,7 @@ public class ConsoleOutput implements ResultViewer {
 
 		System.out.println();
 
-		System.out.println("-- clustering results --");
+		System.out.println("-- results --");
 		System.out.println();
 
 		for(Block block : blocks) {
@@ -25,7 +25,7 @@ public class ConsoleOutput implements ResultViewer {
 		}
 
 //		System.out.println();
-		System.out.println("------------------------");
+		System.out.println("-------------");
 
 	}
 
