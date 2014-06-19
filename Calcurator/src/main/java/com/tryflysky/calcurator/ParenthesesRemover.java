@@ -1,8 +1,6 @@
 package com.tryflysky.calcurator;
 
 import java.util.Deque;
-import java.util.LinkedList;
-
 import com.tryflysky.expression.helper.ExpressionUtils;
 import com.tryflysky.expression.model.Expression;
 import com.tryflysky.expression.model.Parentheses;
@@ -87,12 +85,12 @@ public class ParenthesesRemover {
 
 			if(leftParentheses(c)) {
 
-				c = toNoParenthesesExpression(charDeque);	//左括弧[(]が見つかったら
+				c = toNoParenthesesExpression(charDeque);	//左括弧[(]が見つかったら再帰
 			}
 
 			if(rightParentheses(c)) {
 
-				return calcurator.execute(noParentheses.toString());
+				return calcurator.execute(noParentheses.toString());	//右括弧がでたらそこまでを計算
 			}
 
 			noParentheses.append(c);
